@@ -5,8 +5,12 @@ Vue.use(Vuex)
 
 export default new Vuex.Store({
   state: {
+    currentSearch:[]
   },
   mutations: {
+    setCurrentSearch(state, payload){
+      state.currentSearch.push(payload)
+    }
   },
   actions: {
   },

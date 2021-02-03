@@ -1,0 +1,18 @@
+$body-bg: #ece4d9;
+
+$body-color: #5b403f;
+
+$theme-colors: (
+  "primary": #5b403f,
+  "secondary": #5b403f,
+  "danger": #5b403f,
+);
+
+@import "~bootstrap";
+@import "~bootstrap-vue";
+
+#app {
+  color: unset;
+  font-size: small;
+  text-align: center;
+}

@@ -1,28 +1,16 @@
 <template>
   <div id="container">
-    <div id="searchBar">
+    <div class="search">
       <img alt="Vue logo" src="../assets/logo.png">
       <b-button variant="secondary" @click="$router.push('search')">Looking for something specific? Click here!</b-button>
     </div>
-    <div id="main">
-      <Jumbotron></Jumbotron>
-    </div>
+    <h2>Reserved space for VG-kriterer:</h2>
+    <p>• Minst ett datavärde sparas i, uppdateras (via en mutation), och hämtas från, Vuex (Ändra inget state på något annat sätt än via mutations)</p>
+    <p> • Använd minst ett Vue Router-adressparametervärde</p>
   </div>
 </template>
-
-<script>
-// @ is an alias to /src
-import Jumbotron from '@/components/Jumbotron.vue'
-export default {
-  name: 'Home',
-  components: {
-    Jumbotron
-  }
-}
-</script>
-
 <style scoped>
-#searchBar {
+.search {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;

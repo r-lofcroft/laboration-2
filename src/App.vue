@@ -4,10 +4,10 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/saved">Saved</router-link>
       <div v-if="online">
-      <b-icon-shield-fill-check v-b-tooltip.hover title="Online"  style="float: right; padding: 2em"></b-icon-shield-fill-check>
+        <img src="@/assets/shield-fill-check.svg" alt="shield-check" v-b-tooltip.hover title="Online" style="float: right; padding: 2em">
       </div>
       <div v-else>
-      <b-icon-shield-fill-x v-b-tooltip.hover title="Offline" style="float: right; padding: 2em" ></b-icon-shield-fill-x>
+      <img src="@/assets/shield-fill-x.svg" alt="shield-x" v-b-tooltip.hover title="Offline" style="float: right; padding: 2em" >
       </div>
     </div>
     <router-view/>

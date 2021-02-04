@@ -32,25 +32,7 @@ export default {
       }
   },
   created(){
-    //only filter of top 100 hits but has potential to go past 2500
-    let i = Math.round(Math.random() * 100);
-    console.log(i)
-
-    axios.get(`https://api.jikan.moe/v3/anime/${i}`)
-        .then(response => response.data)
-        .catch(handleErrors)
-        .then(result =>{
-            this.animeDatas=result
-            console.log(this.animeDatas.title)
-        })
-        function handleErrors(err){
-          if(err.response.status === 404){
-            console.log('Problem with response.',err.response.status)
-            this.reloadRequest()
-          } else{
-            console.log('Other Error')
-          }
-        }
+    this.reloadRequest()
   },
   methods: {
     onClick(){
@@ -58,7 +40,7 @@ export default {
     },
     //Reloads axios.get when 404 response. (works better than reloading window)
     reloadRequest(){
-      let i = Math.round(Math.random() * 100);
+      let i = Math.round(Math.random() * 1000);
       axios.get(`https://api.jikan.moe/v3/anime/${i}`)
         .then(response => response.data)
         .catch(handleErrors)
@@ -69,11 +51,19 @@ export default {
         function handleErrors(err){
           if(err.response.status === 404){
             console.log('Problem with response.',err.response.status)
-            this.reloadRequest()
+            this.defaultLoad()
           } else{
             console.log('Other Error')
           }
         }
+    },
+    defaultLoad(){
+      axios.get(`https://api.jikan.moe/v3/anime/1`)
+      .then(response => response.data)
+      .then(result =>{
+        this.animeDatas=result
+        console.log(this.animeDatas.title)
+      })
     }
   }
 }

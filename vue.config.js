@@ -6,15 +6,15 @@ module.export = {
         name: 'Anime Randomizer',
         themeColor: '#5b403f',
         workboxOptions: {
-            runtimeCaching: [
-              {
-                handler: 'NetworkFirst',
-                options: {
-                  networkTimeoutSeconds: 5
-                },
-                urlPattern: 'https://api.jikan.moe/v3/anime/1'
-              }
-            ]
-          }
+          runtimeCaching: [
+            {
+              handler: 'NetworkFirst',
+              options: {
+                networkTimeoutSeconds: 5
+              },
+              urlPattern: /^https\:\/\/api.jikan.moe\/v3\/search\/anime.*$/
+            }
+          ]
+        }
+      }
     }
-}
